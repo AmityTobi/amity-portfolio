@@ -1,14 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+const geist = Geist({
   variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
@@ -18,10 +13,9 @@ export const metadata: Metadata = {
   title: "Amity Ekoyi | Frontend Developer",
 
   description:
-    "Frontend developer building responsive and accessible web applications with React, Next.js, TypeScript, and Tailwind CSS.",
+    "Frontend developer building responsive, accessible, and user-friendly web applications with React, Next.js, TypeScript, and Tailwind CSS.",
 
   authors: [{ name: "Amity Ekoyi" }],
-
   creator: "Amity Ekoyi",
 
   alternates: {
@@ -33,15 +27,24 @@ export const metadata: Metadata = {
     url: "/",
     title: "Amity Ekoyi | Frontend Developer",
     description:
-      "Frontend developer building thoughtful, responsive, and accessible web experiences.",
+      "I build thoughtful web experiences that are simple and easy to use.",
     siteName: "Amity Ekoyi",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Amity Ekoyi — Frontend Developer",
+      },
+    ],
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Amity Ekoyi | Frontend Developer",
     description:
-      "Frontend developer building thoughtful, responsive, and accessible web experiences.",
+      "I build thoughtful web experiences that are simple and easy to use.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -53,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} bg-white font-sans text-slate-900 antialiased`}
+        className={`${geist.variable} bg-white font-sans text-slate-900 antialiased`}
       >
         {children}
       </body>
